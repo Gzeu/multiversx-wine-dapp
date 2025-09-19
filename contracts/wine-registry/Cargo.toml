@@ -1,0 +1,24 @@
+[package]
+name = "wine-registry"
+version = "0.1.0"
+edition = "2021"
+authors = ["George Pricop <george@example.com>"]
+license = "MIT"
+description = "Wine Registry Smart Contract for MultiversX"
+
+[lib]
+name = "wine_registry"
+crate-type = ["cdylib"]
+
+[dependencies]
+multiversx-sc = "0.50.4"
+multiversx-sc-derive = "0.50.4"
+
+[dev-dependencies]
+multiversx-sc-scenario = "0.50.4"
+
+[[bin]]
+name = "wine-registry-meta"
+path = "meta/src/main.rs"
+
+[workspace]
