@@ -1,0 +1,55 @@
+{
+  "name": "multiversx-wine-dapp",
+  "version": "1.0.0",
+  "description": "MultiversX Wine dApp with registry, marketplace and investment pools",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:contracts && npm run build:frontend && npm run build:backend",
+    "build:contracts": "cd contracts && ./build-all.sh",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:contracts && npm run test:frontend && npm run test:backend",
+    "test:contracts": "cd contracts && cargo test",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "deploy:devnet": "cd deployment && ./deploy-devnet.sh",
+    "deploy:mainnet": "cd deployment && ./deploy-mainnet.sh",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "keywords": [
+    "multiversx",
+    "blockchain",
+    "wine",
+    "dapp",
+    "smart-contracts",
+    "rust",
+    "react",
+    "typescript"
+  ],
+  "author": "George Pricop <george@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gzeu/multiversx-wine-dapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gzeu/multiversx-wine-dapp/issues"
+  },
+  "homepage": "https://github.com/Gzeu/multiversx-wine-dapp#readme"
+}
